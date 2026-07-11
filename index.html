@@ -1,84 +1,83 @@
-!DOCTYPE html
-html lang=en
-head
-    meta charset=UTF-8
-    meta name=viewport content=width=device-width, initial-scale=1.0
-    titleProductive RPG Trackertitle
-    script src=httpscdn.jsdelivr.netnpm@tailwindcssbrowser@4script
-head
-body class=bg-slate-900 text-slate-100 min-h-screen font-sans flex flex-col items-center py-10 px-4
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productive RPG Tracker</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="bg-slate-900 text-slate-100 min-h-screen font-sans flex flex-col items-center py-10 px-4">
 
-    div class=w-full max-w-md bg-slate-800 rounded-2xl p-6 shadow-2xl border border-slate-700
+    <div class="w-full max-w-md bg-slate-800 rounded-2xl p-6 shadow-2xl border border-slate-700">
         
-        div class=text-center mb-6
-            h1 class=text-2xl font-black tracking-wider text-amber-400 uppercaseProductive Version of Meh1
-            p class=text-xs text-slate-400 mt-1Ubah kebiasaan menjadi Quest harian!p
-        div
+        <div class="text-center mb-6">
+            <h1 class="text-2xl font-black tracking-wider text-amber-400 uppercase">Productive Version of Me</h1>
+            <p class="text-xs text-slate-400 mt-1">Ubah kebiasaan menjadi Quest harian!</p>
+        </div>
 
-        div class=grid grid-cols-2 gap-4 bg-slate-900 p-4 rounded-xl border border-slate-700 mb-6 text-center
-            div
-                p class=text-xs text-slate-400 font-semibold uppercase tracking-widerTotal XPp
-                p id=xp-display class=text-2xl font-black text-emerald-4000 XPp
-            div
-            div
-                p class=text-xs text-slate-400 font-semibold uppercase tracking-wider🔥 Streakp
-                p id=streak-display class=text-2xl font-black text-orange-4000 Daysp
-            div
-        div
+        <div class="grid grid-cols-2 gap-4 bg-slate-900 p-4 rounded-xl border border-slate-700 mb-6 text-center">
+            <div>
+                <p class="text-xs text-slate-400 font-semibold uppercase tracking-wider">Total XP</p>
+                <p id="xp-display" class="text-2xl font-black text-emerald-400">0 XP</p>
+            </div>
+            <div>
+                <p class="text-xs text-slate-400 font-semibold uppercase tracking-wider">🔥 Streak</p>
+                <p id="streak-display" class="text-2xl font-black text-orange-400">0 Days</p>
+            </div>
+        </div>
 
-        div class=mb-6
-            div class=flex justify-between text-xs text-slate-400 font-medium mb-1
-                spanDaily Quest Progressspan
-                span id=progress-text0%span
-            div
-            div class=w-full bg-slate-700 rounded-full h-3 overflow-hidden
-                div id=progress-bar class=bg-gradient-to-r from-amber-400 to-emerald-400 h-full w-0 transition-all duration-300div
-            div
-        div
+        <div class="mb-6">
+            <div class="flex justify-between text-xs text-slate-400 font-medium mb-1">
+                <span>Daily Quest Progress</span>
+                <span id="progress-text">0%</span>
+            </div>
+            <div class="w-full bg-slate-700 rounded-full h-3 overflow-hidden">
+                <div id="progress-bar" class="bg-gradient-to-r from-amber-400 to-emerald-400 h-full w-0 transition-all duration-300"></div>
+            </div>
+        </div>
 
-        hr class=border-slate-700 mb-6
+        <hr class="border-slate-700 mb-6">
 
-        div class=space-y-3 id=habit-list
-            label class=flex items-center justify-between p-4 bg-slate-70050 hoverbg-slate-700 rounded-xl cursor-pointer border border-slate-600 transition-all group
-                div class=flex items-center space-x-3
-                    input type=checkbox class=habit-checkbox w-5 h-5 rounded text-emerald-500 bg-slate-800 border-slate-600 focusring-0 data-xp=10
-                    span class=font-medium group-hovertext-amber-300 transition-colors🧘 Rutinitas Pagi (OlahragaKasur)span
-                div
-                span class=text-xs font-bold bg-slate-800 text-emerald-400 px-2 py-1 rounded border border-slate-600+10 XPspan
-            label
+        <div class="space-y-3" id="habit-list">
+            <label class="flex items-center justify-between p-4 bg-slate-700/50 hover:bg-slate-700 rounded-xl cursor-pointer border border-slate-600 transition-all group">
+                <div class="flex items-center space-x-3">
+                    <input type="checkbox" class="habit-checkbox w-5 h-5 rounded text-emerald-500 bg-slate-800 border-slate-600 focus:ring-0" data-xp="10">
+                    <span class="font-medium group-hover:text-amber-300 transition-colors">🧘 Rutinitas Pagi (Olahraga/Kasur)</span>
+                </div>
+                <span class="text-xs font-bold bg-slate-800 text-emerald-400 px-2 py-1 rounded border border-slate-600">+10 XP</span>
+            </label>
 
-            label class=flex items-center justify-between p-4 bg-slate-70050 hoverbg-slate-700 rounded-xl cursor-pointer border border-slate-600 transition-all group
-                div class=flex items-center space-x-3
-                    input type=checkbox class=habit-checkbox w-5 h-5 rounded text-emerald-500 bg-slate-800 border-slate-600 focusring-0 data-xp=25
-                    span class=font-medium group-hovertext-amber-300 transition-colors💻 Deep Work  Coding  Belajarspan
-                div
-                span class=text-xs font-bold bg-slate-800 text-emerald-400 px-2 py-1 rounded border border-slate-600+25 XPspan
-            label
+            <label class="flex items-center justify-between p-4 bg-slate-700/50 hover:bg-slate-700 rounded-xl cursor-pointer border border-slate-600 transition-all group">
+                <div class="flex items-center space-x-3">
+                    <input type="checkbox" class="habit-checkbox w-5 h-5 rounded text-emerald-500 bg-slate-800 border-slate-600 focus:ring-0" data-xp="25">
+                    <span class="font-medium group-hover:text-amber-300 transition-colors">💻 Deep Work / Coding / Belajar</span>
+                </div>
+                <span class="text-xs font-bold bg-slate-800 text-emerald-400 px-2 py-1 rounded border border-slate-600">+25 XP</span>
+            </label>
 
-            label class=flex items-center justify-between p-4 bg-slate-70050 hoverbg-slate-700 rounded-xl cursor-pointer border border-slate-600 transition-all group
-                div class=flex items-center space-x-3
-                    input type=checkbox class=habit-checkbox w-5 h-5 rounded text-emerald-500 bg-slate-800 border-slate-600 focusring-0 data-xp=15
-                    span class=font-medium group-hovertext-amber-300 transition-colors📚 Membaca Buku (Min. 5 Hal)span
-                div
-                span class=text-xs font-bold bg-slate-800 text-emerald-400 px-2 py-1 rounded border border-slate-600+15 XPspan
-            label
-        div
+            <label class="flex items-center justify-between p-4 bg-slate-700/50 hover:bg-slate-700 rounded-xl cursor-pointer border border-slate-600 transition-all group">
+                <div class="flex items-center space-x-3">
+                    <input type="checkbox" class="habit-checkbox w-5 h-5 rounded text-emerald-500 bg-slate-800 border-slate-600 focus:ring-0" data-xp="15">
+                    <span class="font-medium group-hover:text-amber-300 transition-colors">📚 Membaca Buku (Min. 5 Hal)</span>
+                </div>
+                <span class="text-xs font-bold bg-slate-800 text-emerald-400 px-2 py-1 rounded border border-slate-600">+15 XP</span>
+            </label>
+        </div>
 
-        button id=reset-btn class=mt-6 w-full py-2 bg-slate-900 hoverbg-red-90040 text-xs text-slate-500 hovertext-red-400 rounded-lg transition-colors border border-slate-700
+        <button id="reset-btn" class="mt-6 w-full py-2 bg-slate-900 hover:bg-red-900/40 text-xs text-slate-500 hover:text-red-400 rounded-lg transition-colors border border-slate-700">
             Reset Semua Data
-        button
+        </button>
 
-    div
+    </div>
 
-    script
-         Menggunakan Audio API bawaan browser untuk efek suara Ding
-        const audioCtx = new (window.AudioContext  window.webkitAudioContext)();
+    <script>
+        const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
         function playDingSound() {
             const oscillator = audioCtx.createOscillator();
             const gainNode = audioCtx.createGain();
             oscillator.type = 'sine';
-            oscillator.frequency.setValueAtTime(587.33, audioCtx.currentTime);  Nada D5
-            oscillator.frequency.setValueAtTime(880, audioCtx.currentTime + 0.1);  Nada A5 (bikin efek chord ceria)
+            oscillator.frequency.setValueAtTime(587.33, audioCtx.currentTime); 
+            oscillator.frequency.setValueAtTime(880, audioCtx.currentTime + 0.1); 
             gainNode.gain.setValueAtTime(0.1, audioCtx.currentTime);
             gainNode.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.4);
             oscillator.connect(gainNode);
@@ -87,7 +86,6 @@ body class=bg-slate-900 text-slate-100 min-h-screen font-sans flex flex-col item
             oscillator.stop(audioCtx.currentTime + 0.4);
         }
 
-         DOM Elements
         const checkboxes = document.querySelectorAll('.habit-checkbox');
         const xpDisplay = document.getElementById('xp-display');
         const streakDisplay = document.getElementById('streak-display');
@@ -95,39 +93,33 @@ body class=bg-slate-900 text-slate-100 min-h-screen font-sans flex flex-col item
         const progressText = document.getElementById('progress-text');
         const resetBtn = document.getElementById('reset-btn');
 
-         State  Data Aplikasi
-        let appData = JSON.parse(localStorage.getItem('rpgTrackerData'))  {
-            totalXp 0,
-            streak 0,
-            checkedIds []
+        let appData = JSON.parse(localStorage.getItem('rpgTrackerData')) || {
+            totalXp: 0,
+            streak: 0,
+            checkedIds: []
         };
 
-         Fungsi Sinkronisasi Data ke Tampilan & LocalStorage
         function updateUI() {
             xpDisplay.textContent = `${appData.totalXp} XP`;
             streakDisplay.textContent = `${appData.streak} Days`;
             
-             Hitung persentase progress harian
             const totalHabits = checkboxes.length;
             const checkedHabits = appData.checkedIds.length;
-            const percentage = totalHabits  0  Math.round((checkedHabits  totalHabits)  100)  0;
+            const percentage = totalHabits > 0 ? Math.round((checkedHabits / totalHabits) * 100) : 0;
             
             progressBar.style.width = `${percentage}%`;
             progressText.textContent = `${percentage}%`;
 
-             Simpan perubahan ke LocalStorage
             localStorage.setItem('rpgTrackerData', JSON.stringify(appData));
         }
 
-         Inisialisasi posisi centang berdasarkan data tersimpan
-        checkboxes.forEach((cb, index) = {
+        checkboxes.forEach((cb, index) => {
             if (appData.checkedIds.includes(index)) {
                 cb.checked = true;
-                cb.disabled = true;  Kunci biar ga bisa di-uncheck sesuka hati hari ini
+                cb.disabled = true;
                 cb.parentElement.parentElement.classList.add('opacity-50', 'line-through');
             }
 
-             Event Listener saat checkbox diklik
             cb.addEventListener('change', function() {
                 if (this.checked) {
                     playDingSound();
@@ -135,14 +127,11 @@ body class=bg-slate-900 text-slate-100 min-h-screen font-sans flex flex-col item
                     appData.totalXp += xpGained;
                     appData.checkedIds.push(index);
                     
-                     Kunci elemen setelah dicentang
                     this.disabled = true;
                     this.parentElement.parentElement.classList.add('opacity-50', 'line-through');
 
-                     Cek jika semua quest hari ini selesai, tambah streak bonus
                     if (appData.checkedIds.length === checkboxes.length) {
                         appData.streak += 1;
-                        alert(🎉 JACKPOT! Semua quest hari ini selesai! Streak bertambah!);
                     }
 
                     updateUI();
@@ -150,12 +139,11 @@ body class=bg-slate-900 text-slate-100 min-h-screen font-sans flex flex-col item
             });
         });
 
-         Tombol Reset Data
-        resetBtn.addEventListener('click', () = {
-            if (confirm(Kamu yakin mau merestart semua progress game-mu)) {
+        resetBtn.addEventListener('click', () => {
+            if (confirm("Kamu yakin mau merestart semua progress game-mu?")) {
                 localStorage.removeItem('rpgTrackerData');
-                appData = { totalXp 0, streak 0, checkedIds [] };
-                checkboxes.forEach(cb = {
+                appData = { totalXp: 0, streak: 0, checkedIds: [] };
+                checkboxes.forEach(cb => {
                     cb.checked = false;
                     cb.disabled = false;
                     cb.parentElement.parentElement.classList.remove('opacity-50', 'line-through');
@@ -164,8 +152,7 @@ body class=bg-slate-900 text-slate-100 min-h-screen font-sans flex flex-col item
             }
         });
 
-         Jalankan UI pertama kali saat halaman dimuat
         updateUI();
-    script
-body
-html
+    </script>
+</body>
+</html>
